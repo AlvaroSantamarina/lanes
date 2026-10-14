@@ -1,0 +1,12 @@
+{
+  "name": "lanes",
+  "description": "Marketplace for the lanes plugin.",
+  "owner": { "name": "Alvaro Santamarina" },
+  "plugins": [
+    {
+      "name": "lanes",
+      "source": "./",
+      "description": "Coordinate parallel Claude Code sessions with briefs, approved plans, audits and a shared repo memory."
+    }
+  ]
+}
