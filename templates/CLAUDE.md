@@ -43,13 +43,13 @@ Start prompt: *"Start the brief `docs/briefs/<ID>-<slug>.md` following `CLAUDE.m
    - If you are already in a worktree: do not create another one.
    - Rename the branch to the one the brief gives, and run `{{SETUP_CMD}}`.
 1. **Read** this file, `docs/memory.md`, your brief and **only** what the brief lists under "Read first". If your brief depends on another, read that brief's "What's left", not its code.
-2. **Write the plan** in `docs/plans/<ID>-<slug>.md`, following `docs/plans/_template.md`. No code before the owner's OK.
+2. **Write the plan** with the skill `lanes:planning`: `docs/plans/<ID>-<slug>.md`, following `docs/plans/_template.md`. No code before the owner's OK.
    - Tests are listed before code. Every deviation from the brief is marked as such.
    - Questions for the owner go at the top, each with **your recommended option first and why**.
    - The plan ends with **"Context for implementation"**: written so that the plan alone is enough to implement after a compaction.
    - **Stop and wait for the OK.** If the owner asks for changes, fix the plan and wait again.
 3. **Compact at the boundary.** After the OK (and the adjustments are in the plan), compact with: *"Keep the approved plan, the adjustments and the context for implementation; drop exploratory reads."* If the context is already above ~75 %, prefer `/clear` and restart from the plan.
-4. **Implement test-first:** red → code → green → refactor. Tick each task (`- [x]`) as you finish it; add unplanned tasks marked `(new)`. The plan always shows where you are.
+4. **Implement test-first** with the skill `lanes:test-first`: red → code → green → refactor. Tick each task (`- [x]`) as you finish it; add unplanned tasks marked `(new)`. The plan always shows where you are.
 5. **Run the checks:** `{{CHECK_CMD}}`. Nothing moves on until it is green.
 6. **Review with agents:** {{REVIEWERS, e.g. "code-reviewer always; database-reviewer if you touched SQL; security-reviewer if you touched auth, webhooks, secrets or personal data"}}. Fix everything critical and high; the rest goes to "What's left".
 7. **Close the brief, in the same PR:**

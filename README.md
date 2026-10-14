@@ -49,10 +49,14 @@ It came out of building a real product (a CRM with a WhatsApp sales bot) end to 
 | `skills/coordination` | This session coordinates, or resumes coordinating after a compaction |
 | `skills/writing-briefs` | Writing a brief or a batch, including the pre-push audit |
 | `skills/reviewing-plans` | A lane says "plan written, waiting for your OK", or "PR open" |
+| `skills/planning` | A lane session writes its plan (step 2 of the protocol) |
+| `skills/test-first` | A lane session implements the approved plan |
 | `agents/auditor` | Auditing a plan or a brief (Opus, fixed budget and output) |
 | `templates/` | `CLAUDE.md` (session protocol, final report, definition of done), `decisions.md`, `memory.md`, `INDEX.md`, `brief.md`, `plan.md` |
 
-The lane sessions need no skill: their protocol is in the project's `CLAUDE.md`, which every session loads automatically.
+The lane sessions follow the protocol in the project's `CLAUDE.md`, which every session loads automatically; the protocol tells them when to use `planning` and `test-first`.
+
+`planning` and `test-first` are inspired by the `/plan` command and the `tdd-workflow` skill of [everything-claude-code](https://github.com/affaan-m/everything-claude-code), rewritten to fit this method (the plan template, the auditor, the compaction boundary) and kept short.
 
 ## Install
 
