@@ -52,11 +52,14 @@ It came out of building a real product (a CRM with a WhatsApp sales bot) end to 
 | `skills/planning` | A lane session writes its plan (step 2 of the protocol) |
 | `skills/test-first` | A lane session implements the approved plan |
 | `agents/auditor` | Auditing a plan or a brief (Opus, fixed budget and output) |
+| `agents/code-reviewer` | Reviewing a lane's change before its PR, always |
+| `agents/database-reviewer` | The change touches SQL, migrations, schema or non-trivial queries |
+| `agents/security-reviewer` | The change touches auth, endpoints, webhooks, secrets, uploads, outbound calls or personal data |
 | `templates/` | `CLAUDE.md` (session protocol, final report, definition of done), `decisions.md`, `memory.md`, `INDEX.md`, `brief.md`, `plan.md` |
 
 The lane sessions follow the protocol in the project's `CLAUDE.md`, which every session loads automatically; the protocol tells them when to use `planning` and `test-first`.
 
-`planning` and `test-first` are inspired by the `/plan` command and the `tdd-workflow` skill of [everything-claude-code](https://github.com/affaan-m/everything-claude-code), rewritten to fit this method (the plan template, the auditor, the compaction boundary) and kept short.
+`planning` and `test-first` are inspired by the `/plan` command and the `tdd-workflow` skill of [everything-claude-code](https://github.com/affaan-m/everything-claude-code), rewritten to fit this method (the plan template, the auditor, the compaction boundary) and kept short. The three reviewers take two ideas from the same collection — confidence filtering and proof required for high-severity findings — and are scoped to the lane's diff, its brief and the project's own rules.
 
 ## Install
 

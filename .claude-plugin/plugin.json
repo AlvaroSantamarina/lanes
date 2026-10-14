@@ -1,6 +1,6 @@
 {
   "name": "lanes",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A method for building software with one coordination session and several Claude Code sessions working in parallel lanes: system design, briefs, plans approved before code, audits that verify instead of re-planning, and a shared memory in the repo.",
   "author": { "name": "Alvaro Santamarina" },
   "homepage": "https://github.com/AlvaroSantamarina/lanes",

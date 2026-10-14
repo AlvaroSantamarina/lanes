@@ -51,7 +51,7 @@ Start prompt: *"Start the brief `docs/briefs/<ID>-<slug>.md` following `CLAUDE.m
 3. **Compact at the boundary.** After the OK (and the adjustments are in the plan), compact with: *"Keep the approved plan, the adjustments and the context for implementation; drop exploratory reads."* If the context is already above ~75 %, prefer `/clear` and restart from the plan.
 4. **Implement test-first** with the skill `lanes:test-first`: red → code → green → refactor. Tick each task (`- [x]`) as you finish it; add unplanned tasks marked `(new)`. The plan always shows where you are.
 5. **Run the checks:** `{{CHECK_CMD}}`. Nothing moves on until it is green.
-6. **Review with agents:** {{REVIEWERS, e.g. "code-reviewer always; database-reviewer if you touched SQL; security-reviewer if you touched auth, webhooks, secrets or personal data"}}. Fix everything critical and high; the rest goes to "What's left".
+6. **Review with agents** (from the lanes plugin; launch the ones that apply in parallel): `lanes:code-reviewer` always; `lanes:database-reviewer` if you touched SQL, migrations, schema or non-trivial queries; `lanes:security-reviewer` if you touched auth, public endpoints, webhooks, secrets, uploads, outbound calls or personal data. {{Project-specific reviewers, if any (e.g. a front-end reviewer).}} Fix everything critical and high; the rest goes to "What's left".
 7. **Close the brief, in the same PR:**
    - fill the brief's **"What's left"**: what the module exposes, what deviated and why, what is pending (and for which future brief);
    - copy the items meant for other briefs into `docs/memory.md` under "Carry-overs";

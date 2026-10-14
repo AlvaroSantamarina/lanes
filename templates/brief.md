@@ -41,8 +41,8 @@ One page. Every claim about existing code or data is verified before it is writt
 - **<Case>:** <what must happen>.
 
 ## Review
-- `code-reviewer`
-- <other reviewers, each with the focus that justifies it>.
+- `lanes:code-reviewer`
+- <`lanes:database-reviewer` / `lanes:security-reviewer` / project reviewers, each with the focus that justifies it>.
 
 ## Plan
 `docs/plans/<ID>-<slug>.md`: the session writes it, the owner approves it before code, and the session ticks tasks as it goes.

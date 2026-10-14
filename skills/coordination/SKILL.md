@@ -32,7 +32,8 @@ After the system design (skill `system-design`) is done:
    - `INDEX.md` → `docs/briefs/INDEX.md`;
    - `plan.md` → `docs/plans/_template.md`.
 2. Write the core briefs (skill `writing-briefs`).
-3. Make sure the project has: a one-command setup for a fresh worktree (env, ports, database per worktree), a one-command check, mocks by default for every external service, and per-module registries so parallel lanes add one line each instead of editing shared code.
+3. Fill the reviewers line in `CLAUDE.md` (the plugin's three reviewers plus any project-specific one).
+4. Make sure the project has: a one-command setup for a fresh worktree (env, ports, database per worktree), a one-command check, mocks by default for every external service, and per-module registries so parallel lanes add one line each instead of editing shared code.
 
 ## Working the lanes
 
